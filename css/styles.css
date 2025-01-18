@@ -20,9 +20,16 @@ body {
     color: #333;
 }
 
-.part1, .part2{
+.part1{
     width: 100%;
     height: 100vh;
+    scroll-snap-align: start; 
+    scroll-snap-stop: always; 
+}
+
+.part2{
+    width: 100%;
+    height: auto;
     scroll-snap-align: start; 
     scroll-snap-stop: always; 
 }
@@ -172,15 +179,16 @@ a {
 
 .about {
     background-color: #f7f7f7;
-    height: 33vh; 
+    height: auto; 
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
-.container {
+.about .container {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -189,7 +197,8 @@ a {
 h2 {
     font-size: 2.5em;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .about p {
@@ -209,13 +218,13 @@ h2 {
     background-color: #011a20;
     color: white; 
     padding: 20px 0;
-    min-height: 67vh;
+    height: auto;
 }
 
 
 .container-gallery {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: flex-start;
     gap: 20px;
     
@@ -225,7 +234,6 @@ h2 {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -240,7 +248,7 @@ h2 {
     width: 100%;
     height: auto;
     max-height: 400px;
-    max-width: 700px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -254,7 +262,6 @@ h2 {
     display: flex;
     flex-direction: row; 
     align-items: flex-start; 
-    text-align: left;
 }
 
 .vertical-layout .photo {
@@ -265,7 +272,6 @@ h2 {
 }
 
 .photo-item.vertical-layout .conteiner {
-
     display: flex; 
     flex-direction: column;
     justify-content: flex-start;
@@ -287,7 +293,7 @@ h2 {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 60px 0; 
     box-sizing: border-box;
 }
@@ -320,7 +326,7 @@ h2 {
 
 .valores-lista {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     gap: 20px;
 }
@@ -329,9 +335,10 @@ h2 {
     background-color: #083240;
     padding: 20px;
     border-radius: 8px;
-    width: calc(33% - 20px);
+    width: calc(36% - 0px);
     box-sizing: border-box;
     text-align: left;
+    
 }
 
 .valor-item h3 {
@@ -470,8 +477,6 @@ h2 {
     .vertical-layout .photo {
         margin-top: 40px;
         max-width: 330px;
-        margin-right: 13px;
-       
     }
 
     .photo-item.vertical-layout .conteiner {
@@ -486,15 +491,39 @@ h2 {
         display: flex;
         flex-direction: column;
         gap: 2px;
-        justify-content: center;
-        align-items: center;
+        
     }
  
+    .vertical-layout h2{
+        font-size: 2.4em;
+    }
+
+    .about{
+        height: auto; 
+    }
+
+    .photo-gallery{
+        display: flex;
+    }
+
+
+    .container-gallery {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        margin-top: -20px;
+    }
+
+    .horizontal-layout{
+        min-width: 100%;
+       
+    }
+
     .vertical-layout{
         min-width: 100%;
         justify-content: center;
         align-items: center;
-        scroll-snap-align: start;
+       
     }
 
     .vertical-layout .photo {
@@ -541,9 +570,7 @@ h2 {
     }
 
     .photo-gallery{
-        overflow-x: auto;
         display: flex;
-        scroll-snap-type: x mandatory;
     }
 
     .photo-caption {
@@ -560,14 +587,15 @@ h2 {
     .horizontal-layout{
         min-width: 100%;
         flex: none;
-        scroll-snap-align: start;
+        
+        
     }
 
     .vertical-layout{
         min-width: 100%;
         justify-content: center;
         align-items: center;
-        scroll-snap-align: start;
+       
     }
 
     .vertical-layout .photo {
@@ -615,7 +643,7 @@ h2 {
 
     .part2 {
         height: auto; 
-        overflow-y: visible;
+
     }
 
     .about p {
@@ -647,12 +675,16 @@ h2 {
     }
 
     .vertical-layout{
-        overflow-y: auto;
+        
     }
 
     .part3 {
         height: auto; 
-        overflow-y: visible; 
+
+    }
+
+    .valores-lista{
+        flex-wrap: wrap;
     }
 
 
@@ -718,7 +750,7 @@ h2 {
 
     .part2 {
         height: auto; 
-        overflow-y: visible;
+
     }
 
     .about p {
@@ -739,6 +771,7 @@ h2 {
 
     .container-gallery {
         gap: 0px;
+        
     }
     
     .photo-gallery p{
@@ -748,6 +781,7 @@ h2 {
         width: 400px;
         
     }
+    
 
     .horizontal-layout .photo{
         max-width:400px;
@@ -758,11 +792,18 @@ h2 {
         gap: 0;
     }
 
+    .valor-item {
+        width: 230px;
+        box-sizing: border-box;
+        text-align: left;
+        
+    }
+
     .atendimento-item {
         display: flex;
         align-items: flex-start; 
         gap: 15px; 
-        width: 100%; 
+        width: 90%; 
         box-sizing: border-box; 
     }
     
@@ -791,7 +832,7 @@ h2 {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 439px) {
 
     .navbar {
         top: 2%;
@@ -822,7 +863,7 @@ h2 {
 
     .part2 {
         height: auto; 
-        overflow-y: visible;
+        
     }
 
     .about p {
@@ -836,6 +877,12 @@ h2 {
         margin-bottom: 2px;
     }
 
+    .about .container {
+        width: 98%;
+        max-width: 98%;
+        
+    }
+
     .about{
         width: 100%;
         padding: 0 0;
@@ -844,6 +891,8 @@ h2 {
     }
 
     .container-gallery {
+        align-items:center;
+        justify-content: center;
         gap: 0px;
     }
     
@@ -851,31 +900,33 @@ h2 {
         font-size: 0.9em;
     }
     .horizontal-layout p{
-        width: 340px;
+        width: 330px;
     }
 
     .horizontal-layout .photo{
-        max-width:340px;
+        max-width:390px;
     }
 
     .vertical-layout{
         flex-direction: column;
         gap: 0;
         justify-content: center;
-        align-items:flex-start;
+        
+       
     }
 
     .vertical-layout p{
-        width: 280px;
-        margin-left: 38px;
-        margin-top: -5px;
+        width: 110%;
+        margin-top: -2px;
         
     }
 
     .vertical-layout .photo{
-        margin-left: 27px;
-        height: 450px;
+        margin-right: 0; 
+        height: 420px;
     }
+
+    
 
     .part3 h2{
         font-size: 1.7em;
@@ -889,7 +940,7 @@ h2 {
         display: flex;
         align-items: flex-start; 
         gap: 15px; 
-        width: 100%; 
+        width: 90%; 
         box-sizing: border-box;
     }
     
