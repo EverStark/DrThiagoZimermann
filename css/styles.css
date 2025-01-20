@@ -749,7 +749,11 @@ h2 {
     .hero{
         background-size: 850px;
         background-position: 50% 34%; 
-    }    
+    }  
+    
+    .hero-content{
+        margin-top: -190px;
+    }
 
     .part2 {
         height: auto; 
@@ -883,7 +887,6 @@ h2 {
     .about .container {
         width: 98%;
         max-width: 98%;
-        
     }
 
     .about{
@@ -914,8 +917,6 @@ h2 {
         flex-direction: column;
         gap: 0;
         justify-content: center;
-        
-       
     }
 
     .vertical-layout p{
@@ -928,8 +929,6 @@ h2 {
         margin-right: 0; 
         height: 420px;
     }
-
-    
 
     .part3 h2{
         font-size: 1.7em;
@@ -957,14 +956,88 @@ h2 {
     }
     
     .redes-sociais-icones a span{
-    display: none;
+        display: none;
         gap: 3px;
     }
 
     .redes-sociais-icones{
-
         align-items: center;
         margin-left: -6px;
         margin-bottom: -35px;
     }
+}
+
+@media (max-width: 369px) {
+
+    .hero{
+        background-size: 620px; 
+        background-position: 50% 32%;
+    }
+
+    .hero-content{
+        margin-top: -240px;
+    }
+
+
+    .horizontal-layout p{
+        width: 280px;
+    }
+
+    .horizontal-layout .photo{
+        max-width:280px;
+        width: auto;
+    }
+
+    .vertical-layout .photo{
+        height: 390px;
+    }
+
+}
+
+@media (max-width: 319px) {
+
+    .horizontal-layout p{
+        width: 250px;
+    }
+
+    .horizontal-layout .photo{
+        max-width:250px;
+    }
+
+    .vertical-layout .photo{
+        height: 320px;
+    }
+
+}
+
+@media (max-width: 319px) {
+
+    .horizontal-layout p{
+        width: 220px;
+    }
+
+    .horizontal-layout .photo{
+        max-width:220px;
+    }
+
+    .vertical-layout .photo{
+        height: 310px;
+    }
+
+}
+
+@media (max-width: 259px) {
+
+    .horizontal-layout p{
+        width: 200px;
+    }
+
+    .horizontal-layout .photo{
+        max-width:200px;
+    }
+
+    .vertical-layout .photo{
+        height: 300px;
+    }
+
 }
